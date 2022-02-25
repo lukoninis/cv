@@ -20,7 +20,13 @@ def main(count: int):
     print(f"Matrix:\n{matrix}")
 
     u, s, vh = np.linalg.svd(matrix)
-
+    xs = vh[abs(s) < 1e-5]
+    
+    # check this
+    for x in xs:
+        result = abs(np.sum(matrix @ x.T)) < 1e-9
+        print(f"{x}: {result}")
+        
 
 if __name__ == "__main__":
     main()
