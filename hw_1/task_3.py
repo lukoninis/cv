@@ -7,8 +7,7 @@ def generate_matrix(count: int) -> np.matrix:
 
     for i in range(0, count):
         for j in range(0, count):
-            div = (i + j -1)
-            data[i][j] = 1 / div if div != 0 else 1000000  # Why not?
+            data[i][j] = i + j - 1
 
     return np.matrix(data)
 
@@ -20,9 +19,7 @@ def main(count: int):
 
     print(f"Matrix:\n{matrix}")
 
-    # SVD-based calculate inverse of a matrix
-    inv_matrix = np.linalg.pinv(matrix)
-    print(inv_matrix)
+    u, s, vh = np.linalg.svd(matrix)
 
 
 if __name__ == "__main__":

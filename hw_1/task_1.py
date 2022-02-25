@@ -12,7 +12,7 @@ def main():
 
     print(matrix)
 
-    ort_matrix = u * vh
+    ort_matrix = u @ vh
     print(ort_matrix)
 
     # it seems like rotate over OZ.
