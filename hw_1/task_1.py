@@ -8,14 +8,14 @@ def main():
         [0., 0.5, 2.5]
     ])
 
-    u, s, vh = np.linalg.svd(matrix)
+    u, _, vh = np.linalg.svd(matrix)
 
     print(matrix)
 
     ort_matrix = u * vh
     print(ort_matrix)
 
-    # it seems like rotete over OZ.
+    # it seems like rotate over OZ.
     # angle:
     print((180 / np.pi) * np.arcsin(ort_matrix[0, 0]))
 
