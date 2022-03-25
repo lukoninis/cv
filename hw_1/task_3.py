@@ -3,7 +3,7 @@ import numpy as np
 
 
 def generate_matrix(count: int) -> np.matrix:
-    data = np.array(shape=(count, count))
+    data = np.zeros((count, count))
 
     for i in range(0, count):
         for j in range(0, count):
@@ -21,12 +21,12 @@ def main(count: int):
 
     u, s, vh = np.linalg.svd(matrix)
     xs = vh[abs(s) < 1e-5]
-    
+
     # check this
     for x in xs:
         result = abs(np.sum(matrix @ x.T)) < 1e-9
         print(f"{x}: {result}")
-        
+
 
 if __name__ == "__main__":
     main()

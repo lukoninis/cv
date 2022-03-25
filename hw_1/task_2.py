@@ -3,7 +3,7 @@ import numpy as np
 
 
 def generate_matrix(count: int) -> np.matrix:
-    data = np.array(shape=(count, count))
+    data = np.zeros((count, count))
 
     for i in range(0, count):
         for j in range(0, count):

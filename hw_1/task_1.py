@@ -17,7 +17,7 @@ def main():
 
     # it seems like rotate over OZ.
     # angle:
-    print((180 / np.pi) * np.arcsin(ort_matrix[0, 0]))
+    print((180 / np.pi) * np.arccos(ort_matrix[0, 0]))
 
 
 if __name__ == "__main__":
